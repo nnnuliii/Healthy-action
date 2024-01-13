@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-Lge2E2XotzMiwH69/MXB72yLpwyENMiOKX8zS8Qo7LDCvaBIWGL+GlRQEKIpYR04" crossorigin="anonymous"></script>
+        <script src="./echarts.min.js"></script>
+        <link rel="stylesheet" href="./css/animate.css">
+      <style>
+        body {
+          padding: 0px;
+          background-color: #f0e9e3; /* 设置整体背景色 */
+        }
+
+        #menu {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+        }/* 设置导航栏样式 */
+    
+        #menu .navbar-brand {
+          margin-right: auto; /* 将“导航”居左，其他链接居右 */
+        }
+
+        #menu .navbar-collapse {
+          justify-content: flex-end; /* 将导航链接居右 */
+        }
+
+        .navbar {
+          background-color: #a32c40 !important; /* 修改导航栏的背景颜色 */
+        }
+
+        .navbar-hidden {
+          display: none !important;
+        }
+
+        #menu a {
+          color: #f0e9e3; /* 正常状态下的颜色 */
+        }
+
+        #menu a:hover {
+          color: #f7e2cf; /* 鼠标悬停状态下的颜色 */
+        }
+
+        #menu a:active {
+          color: #f0e9e3; /* 链接被点击时的颜色 */
+        }
+
+
+        #menu a {
+          font-size: 20px; /* 修改导航链接文字字号 */
+          font-weight: bold; /* 修改导航链接文字字重 */
+          text-decoration: none; /* 去除链接的下划线 */
+          margin-right: 20px; /* 设置导航链接之间的水平间距，根据需要调整值 */
+        }
+
+        .content {
+          padding: 0px;
+          height: 1000px;
+        }
+
+        .image{
+            background-image: url('./image/网页封面.png');
+            background-position: 0 0;
+            background-attachment: fixed;
+            background-size: cover;
+            height:1036px;
+            width:100%;
+        }
+
+        .image2{
+            background-image: url('./image/part1-身体病痛背景.png');
+            background-position: 0 0;
+            background-attachment: fixed;
+            background-size: cover;
+            height:550px;
+            width:100%;
+        }
+
+        .image3{
+            background-image: url('./image/part1-睡眠问题背景.png');
+            background-position: 0 0;
+            background-attachment: fixed;
+            background-size: cover;
+            height:590px;
+            width:100%;
+        }
+
+        .image4{
+            background-image: url('./image/part1-女性健康背景.png');
+            background-position: 0 0;
+            background-attachment: fixed;
+            background-size: cover;
+            height:540px;
+            width:100%;
+        }
+
+        .image5{
+            background-image: url('./image/part1-心理健康背景.png');
+            background-position: 0 0;
+            background-attachment: fixed;
+            background-size: cover;
+            height:470px;
+            width:100%;
+        }
+
+        .bg{
+            text-align: center;
+            font-size:46px;
+            font-weight: bolder;
+            height:220px;
+            line-height: 220px;
+            background-color: rgb(131, 134, 204);
+            color:white;
+        }
+
+        .scrolling-text-container {
+            white-space: nowrap;
+            color: #4a312c;
+            padding: 10px;
+            margin: 0 auto;
+            margin-bottom: -5px;
+            overflow: hidden;
+            position: relative;
+            width: 50%;
+        }
+
+        .scrolling-text-inner {
+            animation: scrollText 10s linear infinite;
+            display: inline-block;
+            background: linear-gradient(90deg, #f5aec0, #f5aec0); /* 改变背景颜色 */
+            color: #4a312c;
+            padding: 6px;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+        .statement1 {
+            animation: scrollText1 9s linear infinite;
+        }
+
+        .statement2 {
+            animation: scrollText2 13s linear infinite;
+        }
+
+        .statement3 {
+            animation: scrollText3 12s linear infinite;
+        }
+
+        @keyframes scrollText1 {
+            0% {
+                transform: translateX(630%);
+            }
+            100% {
+                transform: translateX(-300%);
+            }
+        }
+        @keyframes scrollText2 {
+            0% {
+                transform: translateX(300%);
+            }
+            100% {
+                transform: translateX(-200%);
+            }
+        }
+        @keyframes scrollText3 {
+            0% {
+                transform: translateX(400%);
+            }
+            100% {
+                transform: translateX(-200%);
+            }
+        }
+
+        .scroll-fade-in {
+                opacity: 0; /* 初始透明度为0 */
+                transition: opacity 0.5s ease-in-out; /* 添加过渡效果 */
+            }
+
+        p {
+        /*  color: #ecf0f1;  */
+        font-size: 18px;
+        width: calc(100% - 60px);
+        max-width: 700px;
+        margin: 30px auto;
+        text-align:justify;
+        line-height: 36px;
+        }
+
+        .note1{
+            font-size: 13px;
+            margin-left: 33%;
+            color:#4a312cac;
+        }
+
+        h2{
+        color: #000;
+        }
+
+        .highlight1{
+            font-weight:bold;
+            color:#ce5269;
+            font-size: 18px;
+        }
+        .highlight2{
+            font-weight:bolder;
+            color:#f0e9e3;
+            font-size: 46px;
+            text-align: center;
+            font-size:46px;
+            height:220px;
+            line-height: 220px;
+        }
+        
+        .highlight3 {
+            font-weight: bold;
+            color: #a32c40;
+            font-size: 20px;
+        }
+        
+        .highlight4{
+            font-weight:bold;
+            color:#a32c40
+        }
+
+        .bgtitle{
+            position:relative;
+            top:300px;
+            font-size: 65px;
+            color:#a32c40;
+            font-weight: bolder;
+            background-color: rgba(255, 255, 255, 0.7);
+            height:220px;
+        }
+        
+        @font-face{
+            font-family: 'TrueType_2';
+            src: url(./font/TrueType_2.ttf);
+            }
+
+        @font-face{
+            font-family: 'TrueType_1';
+            src: url(./font/TrueType_1.ttf);
+            }
+
+        .mtitle{
+            font-family:TrueType_2;
+            font-weight:bolder;
+            color:#a32c40;
+            font-size: 75px;
+            vertical-align: center; /* 设置垂直对齐为底部 */
+            display: inline-block; /* 需要与 vertical-align 配合使用 */
+            margin-left: 20px;
+            margin-top:30px;
+        }
+
+        .stitle{
+            font-family:TrueType_1;
+            font-weight:normal;
+            color:#a32c40;
+            font-size: 70px;
+            vertical-align:top; /* 设置垂直对齐为顶部 */
+            display: inline-block; /* 需要与 vertical-align 配合使用 */
+            margin-top: 0px;
+            margin-left: 390px;
+        }
+        
+        .zwtitle{
+            font-family:TrueType_2;
+            color: #a32c40;
+            font-size: 60px;
+            background-color: transparent;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-weight:bolder;
+            height:230px;
+            line-height: 230px;
+        }
+
+      </style>
+      <title>“脆皮”一代养生DNA觉醒记</title>
+    </head>
+    
+    <body data-spy="scroll" data-target="#menu" data-offset="56">
+    
+      <!-- 导航栏 -->
+      <nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light navbar-hidden">
+        <div class="container-fluid">
+          <a class="navbar-brand">Page navigation</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="#pt0">开篇</a></li>
+              <li class="nav-item"><a class="nav-link" href="#pt1">养生缘由</a></li>
+              <li class="nav-item"><a class="nav-link" href="#pt2">养生实践</a></li>
+              <li class="nav-item"><a class="nav-link" href="#pt3">养生经济</a></li>
+              <li class="nav-item"><a class="nav-link" href="#pt4">养生潮流</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+
+      <div class="image"><!-- 这里加个标题 -->
+            <div class="bgtitle">
+                <h3 class="mtitle animate__animated animate__fadeIn animate__once animatedElement">“脆皮”一代养生DNA觉醒记：</h3></br>
+                <h3 class="stitle animate__animated animate__fadeIn animate__once animatedElement">年轻人健康自救掀起养生新浪潮</h3>
+            </div>
+      </div>
+
+      <!-- 页面内容 -->
+      <div class="content" style="background-color: #f0e9e3;">
+        <!-- 页面内容部分，包括各个章节（pt0, pt1, ...） -->
+        <!-- 引入 -->
+        <div id="pt0" style="margin-bottom:0px;">
+            <div style="height: 50px;"></div>
+             <p><span class="highlight1">6831.8万</span>的微博话题讨论量，<span class="highlight1">15.3亿次</span>的抖音视频播放量，<span class="highlight1">#脆皮大学生#</span>在近期成为近期年轻人的新外号。“脆皮”原为游戏术语，代指防御力低下且生命值微弱的角色，但在生活、工作、学业等方面压力不断加大的现实状况下，“脆皮现象”在年轻人群体中愈发突出。</p>
+             <p>丁香医生发布的《2023年国民健康洞察报告》显示，相较于其他年龄层民众，“00后”的健康困扰最多，熬夜、缺乏运动、久坐、磕甜等不良生活习惯导致“00后”在皮肤、视力、脱发、情绪、失眠等方面的健康问题更为显著。这些困扰促使年轻人纷纷树立起健康意识，加入养生大军。《2023中国新消费趋势白皮书》显示，超过四成“00后”选择为健康花钱，购买过功能性保健食品或保健仪器。<span class="highlight1">可见，健康管理已呈现低龄化、年轻化态势，而“养生”则成为年轻人乐于探讨并尝试的方式。</span></p>
+             <p>微博、豆瓣小组作为汇聚同好的网络社区，聚集了众多养生青年。在豆瓣平台上，一个以<span class="highlight1">“我们不是中老年，但是就是爱养生！”</span>为口号的小组格外突出，吸引<span class="highlight1">32402名</span>年轻用户、发布近千条讨论......“我们就是爱养生”小组生动展现了当下年轻人的养生现状。</p>
+             <p class="highlight1">为此，团队针对“我们就是爱养生”豆瓣小组和微博相关热搜话题进行数据抓取。</p>
+             <p>一、抓取“我们就是爱养生”豆瓣小组上2021年5月11日至2023年12月22日的<span class="highlight1">1057条</span>用户帖子，剔除无关内容后，共获得<span class="highlight1">813条</span>有效数据；
+                二、抓取微博话题#在中医院喝到了中药奶茶#、#一杯奶茶两代人的沉默#共<span class="highlight1">562条</span>用户评论。</p>
+             <p>期望了解当下年轻人的养生实践及背后原因，探究年轻人养生观念的变化及催生的新养生文化，鼓励更多年轻人认识并践行健康管理，爱护身体，摆脱“脆皮”。</p>
+        </div>
+        <!-- 为什么养生 -->
+        <div id="pt1" style="margin-bottom:10px;">
+        <!-- 需要修改样式 -->
+            <div style="height: 10px;"></div>
+            <div class="image" style="height: 230px;">
+                <h3 class="zwtitle animate__animated animate__fadeIn animate__once animatedElement" style="text-align:center; background-color: #d2c0ae82;">养生缘由：健康困扰下觉醒的养生基因</h3>
+            </div>
+            <p>“我们就是爱养生”小组的数据显示，“我们就是爱养生”小组成员的养生原因与自己出现身心问题密切相关，具体问题可归为以下五类：身体病痛、睡眠问题、女性问题、心理问题、其他。</p>
+            <!-- 这个是“为什么养生”的图表 -->
+            <div id="chart-container-2" style="width: 600px;height: 470px;margin: 0 auto;">
+                <script type="text/javascript">
+                    var chartDom = document.getElementById('chart-container-2');
+                    var myChart = echarts.init(chartDom);
+                    var option;
+            
+                    option = {
+                        title: {
+                            text: '“我们就是爱养生”小组成员养生原因',
+                            subtext: '',
+                            left: 'center',
+                            textStyle: {
+                                color:'#535353',
+                                fontFamily: "Microsoft YaHei"
+                            }
+                        },
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: '{a} <br/>{b} : {c} ({d}%)'
+                        },
+            
+                        legend: {
+                            orient: 'horizontal',
+                            left: 'center',
+                            top: '10%'
+                        },
+                        color: ['#a32c40', '#ce5269', '#ec8164', '#dd7a8a', '#f6b6c6'],
+                        series: [
+                            {
+                            name: '养生原因',
+                            type: 'pie',
+                            radius: [50, 150],
+                            center: ['50%', '50%'],
+                            roseType: 'area',
+            
+                            itemStyle: {
+                                borderRadius: 5
+                            },
+                            data: [
+                                { value: 196, name: '身体病痛' },
+                                { value: 135, name: '其他' },
+                                { value: 75, name: '睡眠问题' },
+                                { value: 30, name: '女性健康' },
+                                { value: 20, name: '心理问题' }
+                            ],
+                            emphasis: {
+                                itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }
+                            }
+                        ]
+                        };
+            
+                        option && myChart.setOption(option);
+                </script>
+            </div>
+            <div class="note1">数据来源：“我们就是爱养生”小组用户贴子</div>
+                <div class="image2">
+                    <p>
+                        <span class="highlight3">身体病痛</span><br>
+                        <span class="highlight1">来自身体的不适与异常是最易于感知的，也是促使年轻人走上养生之路的重要原因。</span>作为“门面”，皮肤和头皮头发的健康程度影响着人的整体状态，对于年轻人而言，痘痘、粉刺、闭口、湿疹等<span class="highlight1">皮肤“刺客”</span>以及脱发、发量少、头皮肿痛等<span class="highlight1">头皮问题</span>让年轻人迫切寻求养生的“神秘力量”。除此之外，由于不良生活习惯如长时间久坐或看手机、饮食不规律等而导致的腰痛、腿酸、颈椎难受、肠炎、胃疼、便秘等病症同样困扰着当下的年轻人。
+                    </p>
+                    <div style="text-align: center;"><img src="./image/part1-身体病痛.png" width="527" height="251" alt="身体病痛分类图片"></div>
+                    <div class="note1">数据来源：“我们就是爱养生”小组用户贴子</div>
+                </div>
+
+                <div class="image3">
+                    <p>
+                        <span class="highlight3">睡眠问题</span><br>
+                        <span class="highlight1">熬夜、失眠、多梦......“睡不好”已成为众多年轻人难以应对的健康困扰。</span>中国睡眠研究会发布的《2022中国健康睡眠调查报告》显示，近<span class="highlight1">3/4</span>的人曾有睡眠困扰，入睡难、失眠、打鼾、多梦，梦游、易醒、嗜睡是睡眠困扰的突出形式，而<span class="highlight1">入睡困难</span>成为头号问题。而在睡眠时间上。19-25岁的青年人平均睡眠时间仅7小时，有近20%的人睡眠时间甚至不超过六小时。<span class="highlight1">熬夜、入睡困难、作息不规律</span>是青年人面对的重要睡眠困扰，其中，<span class="highlight1">44%</span>的年轻人会熬夜到零点后，承受着接踵而来的健康问题。
+                    </p>
+
+                    <div style="text-align: center;">
+                        <div class="scrolling-text-container scroll-delay">
+                            <div class="scrolling-text-inner statement1">入睡困难怎么办？</div>
+                        </div>
+                    
+                        <div class="scrolling-text-container scroll-delay">
+                            <div class="scrolling-text-inner statement2">睡觉反复醒，睡得不踏实，怎么改善呢？</div>
+                        </div>
+                    
+                        <div class="scrolling-text-container">
+                            <div class="scrolling-text-inner statement1">心神不宁，焦虑的失眠…</div>
+                        </div>
+                    
+                        <div class="scrolling-text-container">
+                            <div class="scrolling-text-inner statement3">大家都是怎么养生的啊？最近有些失眠…</div>
+                        </div>
+                    
+                        <div class="scrolling-text-container">
+                            <div class="scrolling-text-inner statement2">睡眠轻，半夜经常醒有什么办法调理？</div>
+                        </div>
+                        <div class="scrolling-text-container">
+                            <div class="scrolling-text-inner statement3">有人知道晚上喝什么可以安神睡眠呀？</div>
+                        </div>
+                    </div>
+                </div>
+
+            
+            <div class="image4">
+                <p>
+                    <span class="highlight3">女性健康</span><br>
+                    <span class="highlight1">在女性健康方面，月经问题、妇科疾病、生育问题是年轻女性十分关注的内容</span>，其中，大多数小组成员分享自己在经期内身体疼痛、月经不规律等问题。美柚APP发布的《2022中国女性经期健康报告》显示，女性在月经期间会感受到众多生理上的不适，最常见的现象是<span class="highlight1">腰酸、腹痛、小腹坠痛</span>，而00后和95后是严重痛经比例最高的两个人群，分别为<span class="highlight1">33.1%</span>和<span class="highlight1">29.1%</span>。为了有效地治疗月经问题，不少女性选择了养生的治疗方法。与此同时，女性所碰到的妇科疾病、生育问题也致使她们尝试通过养生的方式进行身体调理。
+                </p>
+                <div style="text-align: center;"><img src="./image/part1-女性健康.png" width="527" height="193" alt="女性健康分类图片"></div>
+                <div class="note1">数据来源：“我们就是爱养生”小组用户贴子</div>
+            </div>
+
+            <div class="image5">
+                <p>
+                    <span class="highlight3">心理问题</span><br>
+                    <span class="highlight1">除了身体，年轻人的心理也受到一定程度的“打击”。</span>从焦虑、烦躁到郁郁寡欢，学业、工作、生活中的压力和困扰引发了一系列的心理问题，而当下的年轻人发现不良的心理情绪和身体表现的病症一样，都会对正常的生活造成影响，为此，他们加以重视并积极采取措施，渴望能达到心理上的平和与自洽。
+                </p>
+                <div style="text-align: center;">
+                    <div class="scrolling-text-container scroll-delay">
+                        <div class="scrolling-text-inner statement1">压力大焦虑失眠</div>
+                    </div>
+                
+                    <div class="scrolling-text-container scroll-delay">
+                        <div class="scrolling-text-inner statement2">想问大家如何缓解脑神经紧绷的那种感觉？</div>
+                    </div>
+                
+                    <div class="scrolling-text-container">
+                        <div class="scrolling-text-inner statement3">经常感到烦躁怎么办？</div>
+                    </div>
+                
+                    <div class="scrolling-text-container">
+                        <div class="scrolling-text-inner statement2">经常情绪不好肝气郁结脸黄怎么办？</div>
+                    </div>
+                
+                    <div class="scrolling-text-container">
+                        <div class="scrolling-text-inner statement1">控制不住情绪老生气</div>
+                    </div>
+                </div>
+            </div>
+            <p>
+                <span class="highlight3">其他</span><br>
+                除了以上问题，年轻人还遇到了许多其他健康困扰。其中，<span class="highlight1">气血阴阳失调、湿邪、热邪、疲乏</span>的问题较为突出。不仅关注身体的症状，年轻人还尝试用中医理论进行判断与诊疗，他们对自己的具体症状有着清晰的认知，多表现为气血不足、阴虚阳虚、热气、湿热等症状。尽管遇到的问题各式各样，但他们都有共同的解决方法——养生。
+            </p>
+            <div style="text-align: center;"><img src="./image/part1-其他.png" width="527" height="189" alt="女性健康分类图片"></div>
+            <div class="note1">数据来源：“我们就是爱养生”小组用户贴子</div>
+        </div>
+
+        <!--如何养生-->
+        <div id="pt2" style="margin-bottom:10px;"></div>
+        <div style="height: 10px;"></div>
+            <div class="image" style="height: 230px;">
+                <h3 class="zwtitle animate__animated animate__fadeIn animate__once animatedElement" style="text-align:center; background-color: #d2c0ae82;">养生实践：五彩斑斓的奇妙养生之旅</h3>
+            </div>
+      </div>
+    
+      <!-- Bootstrap 脚本和 Popper.js -->
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        var navbar = document.getElementById("menu");
+        window.onscroll = function() {
+            var scrollHeight = window.pageYOffset || document.documentElement.scrollTop;
+            var threshold = 980; // 设置滚动高度的阈值，根据需要调整
+
+            if (scrollHeight > threshold) {
+                navbar.classList.remove("navbar-hidden");
+            } else {
+                navbar.classList.add("navbar-hidden");
+                }
+            };
+        });
+      </script>
+
+        <script>
+            // 使用 getElementsByClassName 获取一组具有相同类名的元素
+            const animatedElements = document.getElementsByClassName('animatedElement');
+
+            // 将 NodeList 转换为数组，以便使用 forEach
+            const elementsArray = Array.from(animatedElements);
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    // 遍历数组中的每个元素
+                    elementsArray.forEach((element) => {
+                        if (entry.isIntersecting) {
+                            // 添加动画类
+                            element.classList.add('animate__fadeIn');
+                        } else {
+                            // 移除动画类
+                            element.classList.remove('animate__fadeIn');
+                        }
+                    });
+                });
+            });
+
+            // 遍历数组中的每个元素并观察它们
+            elementsArray.forEach((element) => {
+                observer.observe(element);
+            });
+        </script>
+      
+    </body>
+    </html>
+    
+
