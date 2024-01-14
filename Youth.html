@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-Lge2E2XotzMiwH69/MXB72yLpwyENMiOKX8zS8Qo7LDCvaBIWGL+GlRQEKIpYR04" crossorigin="anonymous"></script>
+        <script src="./echarts.min.js"></script>
+        <link rel="stylesheet" href="./css/animate.css">
+        <link rel="stylesheet" href="./css/economic.css">
+        <link rel="stylesheet" href="./css/culture.css">
+        <link rel="stylesheet" href="./css/action.css">
+        <link rel="stylesheet" href="./css/nav.css">
+        <link rel="stylesheet" href="./css/fonts.css">
+
+      <style>
+        body {
+          padding: 0px;
+          background-color: #f0e9e3; /* 设置整体背景色 */
+        }
+
+        .image{
+            background-image: url('./image/网页封面.png');
+            background-position: 0 0;
+            background-attachment: fixed;
+            background-size: cover;
+            height:1036px;
+            width:100%;
+        }
+
+        .image2{
+            background-image: url('./image/part1-身体病痛背景.png');
+            background-position: 0 0;
+            background-attachment: fixed;
+            background-size: cover;
+            height:550px;
+            width:100%;
+        }
+
+        .image3{
+            background-image: url('./image/part1-睡眠问题背景.png');
+            background-position: 0 0;
+            background-attachment: fixed;
+            background-size: cover;
+            height:590px;
+            width:100%;
+        }
+
+        .image4{
+            background-image: url('./image/part1-女性健康背景.png');
+            background-position: 0 0;
+            background-attachment: fixed;
+            background-size: cover;
+            height:540px;
+            width:100%;
+        }
+
+        .image5{
+            background-image: url('./image/part1-心理健康背景.png');
+            background-position: 0 0;
+            background-attachment: fixed;
+            background-size: cover;
+            height:470px;
+            width:100%;
+        }
+
+      </style>
+      <title>“脆皮”一代养生DNA觉醒记：年轻人健康自救掀起养生新浪潮</title>
+    </head>
+    
+    <body data-spy="scroll" data-target="#menu" data-offset="56">
+    
+      <!-- 导航栏 -->
+      <nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light navbar-hidden">
+        <div class="container-fluid">
+          <a class="navbar-brand">Page navigation</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="#pt0">开篇</a></li>
+              <li class="nav-item"><a class="nav-link" href="#pt1">养生缘由</a></li>
+              <li class="nav-item"><a class="nav-link" href="#pt2">养生实践</a></li>
+              <li class="nav-item"><a class="nav-link" href="#pt3">养生经济</a></li>
+              <li class="nav-item"><a class="nav-link" href="#pt4">养生潮流</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+
+      <div class="image"><!-- 这里加个标题 -->
+            <div class="bgtitle">
+                <h3 class="mtitle animate__animated animate__fadeIn animate__once animatedElement animate__slow">“脆皮”一代养生DNA觉醒记：</h3></br>
+                <h3 class="stitle animate__animated animate__fadeIn animate__once animatedElement animate__slow">年轻人健康自救掀起养生新浪潮</h3>
+            </div>
+      </div>
+
+      <!-- 页面内容 -->
+      <div class="content" style="background-color: #f0e9e3;">
+        <!-- 页面内容部分，包括各个章节（pt0, pt1, ...） -->
+        <!-- 引入 -->
+        <div id="pt0" style="margin-bottom:0px;">
+            <div style="height: 50px;"></div>
+             <p><span class="highlight1">6831.8万</span>的微博话题讨论量，<span class="highlight1">15.3亿次</span>的抖音视频播放量，<span class="highlight1">#脆皮大学生#</span>在近期成为近期年轻人的新外号。“脆皮”原为游戏术语，代指防御力低下且生命值微弱的角色，但在生活、工作、学业等方面压力不断加大的现实状况下，“脆皮现象”在年轻人群体中愈发突出。</p>
+             <p>丁香医生发布的《2023年国民健康洞察报告》显示，相较于其他年龄层民众，“00后”的健康困扰最多，熬夜、缺乏运动、久坐、磕甜等不良生活习惯导致“00后”在皮肤、视力、脱发、情绪、失眠等方面的健康问题更为显著。这些困扰促使年轻人纷纷树立起健康意识，加入养生大军。《2023中国新消费趋势白皮书》显示，超过四成“00后”选择为健康花钱，购买过功能性保健食品或保健仪器。<span class="highlight1">可见，健康管理已呈现低龄化、年轻化态势，而“养生”则成为年轻人乐于探讨并尝试的方式。</span></p>
+             <p>微博、豆瓣小组作为汇聚同好的网络社区，聚集了众多养生青年。在豆瓣平台上，一个以<span class="highlight1">“我们不是中老年，但是就是爱养生！”</span>为口号的小组格外突出，吸引<span class="highlight1">32402名</span>年轻用户、发布近千条讨论......“我们就是爱养生”小组生动展现了当下年轻人的养生现状。</p>
+             <p class="highlight1">为此，团队针对“我们就是爱养生”豆瓣小组和微博相关热搜话题进行数据抓取。</p>
+             <p>一、抓取“我们就是爱养生”豆瓣小组上2021年5月11日至2023年12月22日的<span class="highlight1">1057条</span>用户帖子，剔除无关内容后，共获得<span class="highlight1">813条</span>有效数据；
+                二、抓取微博话题#在中医院喝到了中药奶茶#、#一杯奶茶两代人的沉默#共<span class="highlight1">562条</span>用户评论。</p>
+             <p>期望了解当下年轻人的养生实践及背后原因，探究年轻人养生观念的变化及催生的新养生文化，鼓励更多年轻人认识并践行健康管理，爱护身体，摆脱“脆皮”。</p>
+        </div>
+
+        <!-- 为什么养生 -->
+        <div id="pt1" style="margin-bottom:10px;">
+        <!-- 需要修改样式 -->
+            <div style="height: 10px;"></div>
+            <div class="image" style="height: 230px;">
+                <h3 class="zwtitle animate__animated animate__fadeIn animate__once animatedElement" style="text-align:center; background-color: #d2c0ae82;">养生缘由：健康困扰下觉醒的养生基因</h3>
+            </div>
+            <p>“我们就是爱养生”小组的数据显示，“我们就是爱养生”小组成员的养生原因与自己出现身心问题密切相关，具体问题可归为以下五类：身体病痛、睡眠问题、女性问题、心理问题、其他。</p>
+            <!-- 这个是“为什么养生”的图表 -->
+            <div id="chart-container-2" style="width: 600px;height: 470px;margin: 0 auto;">
+                <script type="text/javascript">
+                    var chartDom = document.getElementById('chart-container-2');
+                    var myChart = echarts.init(chartDom);
+                    var option;
+            
+                    option = {
+                        title: {
+                            text: '“我们就是爱养生”小组成员养生原因',
+                            subtext: '',
+                            left: 'center',
+                            textStyle: {
+                                color:'#535353',
+                                fontFamily: "Microsoft YaHei"
+                            }
+                        },
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: '{a} <br/>{b} : {c} ({d}%)'
+                        },
+            
+                        legend: {
+                            orient: 'horizontal',
+                            left: 'center',
+                            top: '10%'
+                        },
+                        color: ['#a32c40', '#ce5269', '#ec8164', '#dd7a8a', '#f6b6c6'],
+                        series: [
+                            {
+                            name: '养生原因',
+                            type: 'pie',
+                            radius: [50, 150],
+                            center: ['50%', '50%'],
+                            roseType: 'area',
+            
+                            itemStyle: {
+                                borderRadius: 5
+                            },
+                            data: [
+                                { value: 196, name: '身体病痛' },
+                                { value: 135, name: '其他' },
+                                { value: 75, name: '睡眠问题' },
+                                { value: 30, name: '女性健康' },
+                                { value: 20, name: '心理问题' }
+                            ],
+                            emphasis: {
+                                itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }
+                            }
+                        ]
+                        };
+            
+                        option && myChart.setOption(option);
+                </script>
+            </div>
+            <div class="note1">数据来源：“我们就是爱养生”小组用户贴子</div>
+                <div class="image2">
+                    <p>
+                        <span class="highlight3">身体病痛</span><br>
+                        <span class="highlight1">来自身体的不适与异常是最易于感知的，也是促使年轻人走上养生之路的重要原因。</span>作为“门面”，皮肤和头皮头发的健康程度影响着人的整体状态，对于年轻人而言，痘痘、粉刺、闭口、湿疹等<span class="highlight1">皮肤“刺客”</span>以及脱发、发量少、头皮肿痛等<span class="highlight1">头皮问题</span>让年轻人迫切寻求养生的“神秘力量”。除此之外，由于不良生活习惯如长时间久坐或看手机、饮食不规律等而导致的腰痛、腿酸、颈椎难受、肠炎、胃疼、便秘等病症同样困扰着当下的年轻人。
+                    </p>
+                    <div style="text-align: center;"><img src="./image/part1-身体病痛.png" width="527" height="251" alt="身体病痛分类图片"></div>
+                    <div class="note1">数据来源：“我们就是爱养生”小组用户贴子</div>
+                </div>
+
+                <div class="image3">
+                    <p>
+                        <span class="highlight3">睡眠问题</span><br>
+                        <span class="highlight1">熬夜、失眠、多梦......“睡不好”已成为众多年轻人难以应对的健康困扰。</span>中国睡眠研究会发布的《2022中国健康睡眠调查报告》显示，近<span class="highlight1">3/4</span>的人曾有睡眠困扰，入睡难、失眠、打鼾、多梦，梦游、易醒、嗜睡是睡眠困扰的突出形式，而<span class="highlight1">入睡困难</span>成为头号问题。而在睡眠时间上。19-25岁的青年人平均睡眠时间仅7小时，有近20%的人睡眠时间甚至不超过六小时。<span class="highlight1">熬夜、入睡困难、作息不规律</span>是青年人面对的重要睡眠困扰，其中，<span class="highlight1">44%</span>的年轻人会熬夜到零点后，承受着接踵而来的健康问题。
+                    </p>
+
+                    <div style="text-align: center;">
+                        <div class="scrolling-text-container scroll-delay">
+                            <div class="scrolling-text-inner statement1">入睡困难怎么办？</div>
+                        </div>
+                    
+                        <div class="scrolling-text-container scroll-delay">
+                            <div class="scrolling-text-inner statement2">睡觉反复醒，睡得不踏实，怎么改善呢？</div>
+                        </div>
+                    
+                        <div class="scrolling-text-container">
+                            <div class="scrolling-text-inner statement1">心神不宁，焦虑的失眠…</div>
+                        </div>
+                    
+                        <div class="scrolling-text-container">
+                            <div class="scrolling-text-inner statement3">大家都是怎么养生的啊？最近有些失眠…</div>
+                        </div>
+                    
+                        <div class="scrolling-text-container">
+                            <div class="scrolling-text-inner statement2">睡眠轻，半夜经常醒有什么办法调理？</div>
+                        </div>
+                        <div class="scrolling-text-container">
+                            <div class="scrolling-text-inner statement3">有人知道晚上喝什么可以安神睡眠呀？</div>
+                        </div>
+                    </div>
+                </div>
+
+            
+            <div class="image4">
+                <p>
+                    <span class="highlight3">女性健康</span><br>
+                    <span class="highlight1">在女性健康方面，月经问题、妇科疾病、生育问题是年轻女性十分关注的内容</span>，其中，大多数小组成员分享自己在经期内身体疼痛、月经不规律等问题。美柚APP发布的《2022中国女性经期健康报告》显示，女性在月经期间会感受到众多生理上的不适，最常见的现象是<span class="highlight1">腰酸、腹痛、小腹坠痛</span>，而00后和95后是严重痛经比例最高的两个人群，分别为<span class="highlight1">33.1%</span>和<span class="highlight1">29.1%</span>。为了有效地治疗月经问题，不少女性选择了养生的治疗方法。与此同时，女性所碰到的妇科疾病、生育问题也致使她们尝试通过养生的方式进行身体调理。
+                </p>
+                <div style="text-align: center;"><img src="./image/part1-女性健康.png" width="527" height="193" alt="女性健康分类图片"></div>
+                <div class="note1">数据来源：“我们就是爱养生”小组用户贴子</div>
+            </div>
+
+            <div class="image5">
+                <p>
+                    <span class="highlight3">心理问题</span><br>
+                    <span class="highlight1">除了身体，年轻人的心理也受到一定程度的“打击”。</span>从焦虑、烦躁到郁郁寡欢，学业、工作、生活中的压力和困扰引发了一系列的心理问题，而当下的年轻人发现不良的心理情绪和身体表现的病症一样，都会对正常的生活造成影响，为此，他们加以重视并积极采取措施，渴望能达到心理上的平和与自洽。
+                </p>
+                <div style="text-align: center;">
+                    <div class="scrolling-text-container scroll-delay">
+                        <div class="scrolling-text-inner statement1">压力大焦虑失眠</div>
+                    </div>
+                
+                    <div class="scrolling-text-container scroll-delay">
+                        <div class="scrolling-text-inner statement2">想问大家如何缓解脑神经紧绷的那种感觉？</div>
+                    </div>
+                
+                    <div class="scrolling-text-container">
+                        <div class="scrolling-text-inner statement3">经常感到烦躁怎么办？</div>
+                    </div>
+                
+                    <div class="scrolling-text-container">
+                        <div class="scrolling-text-inner statement2">经常情绪不好肝气郁结脸黄怎么办？</div>
+                    </div>
+                
+                    <div class="scrolling-text-container">
+                        <div class="scrolling-text-inner statement1">控制不住情绪老生气</div>
+                    </div>
+                </div>
+            </div>
+            <p>
+                <span class="highlight3">其他</span><br>
+                除了以上问题，年轻人还遇到了许多其他健康困扰。其中，<span class="highlight1">气血阴阳失调、湿邪、热邪、疲乏</span>的问题较为突出。不仅关注身体的症状，年轻人还尝试用中医理论进行判断与诊疗，他们对自己的具体症状有着清晰的认知，多表现为气血不足、阴虚阳虚、热气、湿热等症状。尽管遇到的问题各式各样，但他们都有共同的解决方法——养生。
+            </p>
+            <div style="text-align: center;"><img src="./image/part1-其他.png" width="527" height="189" alt="女性健康分类图片"></div>
+            <div class="note1">数据来源：“我们就是爱养生”小组用户贴子</div>
+        </div>
+
+        <!--如何养生-->
+        <div id="pt2" style="margin-bottom:10px;">
+            <div style="height: 10px;"></div>
+            <div class="image" style="height: 230px;">
+                <h3 class="zwtitle animate__animated animate__fadeIn animate__once animatedElement" style="text-align:center; background-color: #d2c0ae82;">养生实践：五彩斑斓的奇妙养生之旅</h3>
+            </div>
+
+            <div style="height: 100px;"><p class="intro-text" id="introText1">
+                面对身体无声的呼救，养生是对生活的回应，更是对健康的投资。接下来，让我们一起踏上奇妙的身体修护之旅，发现最简单、最有效的养生之道。因为我们的身体值得我们付出更多的关爱。
+            </p></div>
+
+            <p>根据对豆瓣的调查分析，团队统计了养生爱好者的偏好。其养生方式共有五种，分别是<span class="highlight1">饮食养生</span>、<span class="highlight1">中医养生</span>、<span class="highlight1">足疗养生</span>、<span class="highlight1">运动养生</span>以及<span class="highlight1">精神养生</span>。</p>
+            <div style="text-align: center;"><img src="./image/part2-养生方式.png" width="35%" alt="年轻人养生方式图片"></div>
+            <div class="note1">数据来源：“我们就是爱养生”小组用户贴子，“其他”养生方式占比14.99%。</div>
+            
+            <p class="circle-text">
+                <span>饮</span>
+                <span>食</span>
+                <span>养</span>
+                <span>生</span>
+            </p>
+            <p>
+                <img class="image-left" src="./image/part2-饮食养生.gif" width="100%" alt="年轻人饮食养生动态词云图">
+                “医食同源，药食同源”，中国民间素来有“食疗养生”的观念与文化。如今，随着年轻人的“养生血脉日益觉醒”，食疗养生方式备受年轻人欢迎。通过<span class="highlight1">巧妙搭配食物和草药</span>，人们能够预防疾病、保持健康。从抗氧化的枸杞、富含维生素的水果到以独特的食材组合的五红汤……美味的食材既能满足味蕾，更能提供营养支持。
+            </p>
+            
+            <p class="circle-text" style="position:relative;top: 5px;">
+                <span>中</span>
+                <span>医</span>
+                <span>养</span>
+                <span>生</span>
+            </p>
+            <p>
+                <img class="image-right" src="./image/part2-中医养生.gif" width="100%" alt="年轻人中医养生动态词云图">
+                <span style="position:relative;top: 15px;">“老祖宗传下来的东西真的很好用，全民适宜，老人尤其受益。”艾灸缓解胃病痛经、中药治失眠、三伏天晒背祛寒气……中医养生通过采用<span class="highlight1">草药、针灸、拔罐、艾灸等</span>传统疗法，调整人体阴阳平衡，解决遇到的“疑难杂症”。</span>
+            </p>
+
+            <div style="height: 1px;"></div>
+            <p class="circle-text">
+                <span>足</span>
+                <span>疗</span>
+                <span>养</span>
+                <span>生</span>
+            </p>
+
+            <p>
+                <img class="image-left" src="./image/part2-足疗养生.gif" width="200%" alt="年轻人足疗养生动态词云图">
+                “每天晚上泡个脚真是一天中最舒服的时刻，脚暖呼呼的。”在结束一天的忙碌后，泡脚不仅能助你舒缓疲劳，还可以加入花椒、生姜或中药泡脚包，有效驱寒祛湿。这一古老而实用的养生方式有助于散寒活气血，缓解疲劳，增强免疫力。从<span class="highlight1">泡脚</span>到<span class="highlight1">足贴</span>，这些简单而有效的足疗方法深受广大人群的热爱。
+            </p>
+
+            <p class="circle-text">
+                <span>运</span>
+                <span>动</span>
+                <span>养</span>
+                <span>生</span>
+            </p>
+            <p>
+                <img class="image-right" src="./image/part2-运动养生.gif" width="100%" alt="年轻人运动养生动态词云图">
+                感觉身体变差，提不起精神，想稍微做点什么但又不喜欢运动？那就试一下<span class="highlight1">八段锦</span>吧！强度不大，且各方面都能锻炼到。 “恬淡虚无，真气从之”，相比汤药等外在的滋补，运动养生是一种内在的修炼。不过运动养生必须要长期坚持以及注意动作的标准性，否则容易效果不佳甚至误伤身体。
+            </p>
+
+            <p class="circle-text">
+                <span>精</span>
+                <span>神</span>
+                <span>养</span>
+                <span>生</span>
+            </p>
+            <p>
+                <img class="image-left" src="./image/part2-精神养生.gif" width="100%" alt="年轻人精神养生动态词云图">
+                在日常生活中人们经常会面临情绪的波动，而心情的不稳定往往影响着身体的健康。愤怒、抑郁、焦虑等情绪，直接关系到消化系统。肝脾气机不畅会导致各种不适。养生之道，除了注重饮食和运动，精神养生同样至关重要。通过<span class="highlight1">画画</span>、<span class="highlight1">弹琴</span>、<span class="highlight1">冥想</span>、<span class="highlight1">音乐欣赏</span>、<span class="highlight1">读书写字</span>等方式，让情绪逐渐平静，使身体得到放松。
+            </p>
+        </div>
+
+        <!--养生经济-->
+        <div id="pt3" style="margin-bottom:10px;">
+            <div style="height: 10px;"></div>
+            <div class="image" style="height: 230px;">
+                <h3 class="zwtitle animate__animated animate__fadeIn animate__once animatedElement" style="text-align:center; background-color: #d2c0ae82;">养生经济：健康之风掀起的消费新浪潮</h3>
+            </div>
+            
+            <p>养生概念渗透到人们的日常生活中，追求健康已成为共识。在这背后，养生经济崭露头角，一个庞大而蓬勃发展的市场形成。目前，我国健康养生市场规模已突破万亿元大关，城市常住居民每年平均花费超过1000元用于健康养生。<span class="highlight1">特别是18-35岁的年轻人群，占据了市场份额的83.7%，养生低龄化已成明显趋势。</p>
+            <div class="flourish-embed flourish-scatter" data-src="visualisation/16364957" style="width: 38%;margin: auto;">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+            <p>在高压工作和学业等重压下，这一届年轻人年纪不大，身体就响起了报警信号。2021-2022年，<span class="highlight1">00后在保健养生市场的消费增速高达35%</span>。养生经济正紧跟年轻一代的快速需求，成为他们自救的必然选择，未来养生经济有着广阔的发展前景。</p>
+            
+            <p class="container">
+                <span class="first">年</span><span>轻</span><span>人</span><span>的</span><span>养</span><span>生</span><span>消</span><span>费</span><span>情</span><span>况</span>
+            </p>
+            <p>根据易观分析发布的报告显示，超过90%的年轻人已经养成了定期关注养生的意识。他们<span class="highlight1">对健康寄予厚望</span>，但令人惊讶的是，与其他代际相比，他们对自身健康的自评分数却相对较低，<span class="highlight1">表现出对于保持身体健康的焦虑</span>。数据显示，购买养生保健产品的月花销中，四成年轻人的养生保健花销集中在200-500元之间，花费500元以上的年轻人占比超30%。<span class="highlight1">养生于年轻人而言，已经不再是简单的生活方式选择，更是一项显著的经济投入。</span></p>
+            <div class="flourish-embed flourish-chart" data-src="visualisation/16365688" style="max-width: 28%;height:30%;margin:auto">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+
+            <div style="height: 30px;"></div>
+            <div class="container">
+                <span class="first">年</span><span>轻</span><span>人</span><span>最</span><span>青</span><span>睐</span><span>的</span><span>养</span><span>生</span><span>品</span><span>牌</span>
+            </div>
+
+            <p>在高压工作和生活的双重压力下，年轻一代逐渐倾向于在“偷懒”中实现养生目标，将养生理念融入到日常生活的方方面面。<span class="highlight1">便捷、简单、高效的养生产品逐渐受到关注。</span>这种懒人养生的趋势包括各类保健品、养生茶、即食“轻营养”产品等。消费者被“开袋即食”和口感出众的滋补产品所吸引，其随时养生、低成本养生、高效养生的需求得到了满足。据数据调查显示，截至2022年，消费者购买过的养生产品中，排名前五的分别是<span class="highlight1">益生菌、养生茶饮、蒸汽眼罩、黑芝麻丸和养生茶</span>。在吃喝玩乐中，碎片化养生正受到越来越多年轻人的青睐。</p>
+            <div class="flourish-embed flourish-chart" data-src="visualisation/16369734" style="width: 38%;margin-top:-3%;margin-left:30%">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+
+            <div style="height: 30px;"></div>
+            <div class="container">
+                <span class="first">新</span><span>奇</span><span>的</span><span>养</span><span>生</span><span>方</span><span>式</span><span>——</span><span>——</span><span>中</span><span>药</span><span>奶</span><span>茶</span>
+            </div>
+
+            <!-- 插入奶茶瓶子的SVG图形 -->
+            <div id="tea-bottle" onmouseleave="hideEffect()" style="margin-left: 38%;margin-top: 0px;">
+                <svg id="bottle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="350" height="450">
+                <!-- 自己选择的奶茶瓶子的SVG代码 -->
+                <image xlink:href="奶茶.png" x="0" y="0" width="200" height="200" />
+                <!-- 玉竹杏仁雪梨奶茶 -->
+                <g onmouseover="showEffect('润肺止咳，缓解喉咙痛痒', event)">
+                    <text class="tea-name" x="93" y="80" text-anchor="middle" fill="#4a312c" font-size="6.5">
+                    玉竹杏仁雪梨奶茶
+                    </text>
+                </g>
+                <!-- 桂花山楂陈皮奶茶 -->
+                <g onmouseover="showEffect('开胃健脾，促进食欲', event)">
+                    <text class="tea-name" x="107" y="103" text-anchor="middle" fill="#ffffff" font-size="6.5">
+                    桂花山楂陈皮奶茶
+                    </text>
+                </g>
+                <!-- 党参黄芪红枣奶茶 -->
+                <g onmouseover="showEffect('气阴双补，增强元气', event)">
+                    <text class="tea-name" x="91" y="116" text-anchor="middle" fill="#ffffff" font-size="6.5">
+                    党参黄芪红枣奶茶
+                    </text>
+                </g>
+                <!-- 赤小豆薏米芡实奶茶 -->
+                <g onmouseover="showEffect('健脾祛湿消水肿', event)">
+                    <text class="tea-name" x="100" y="129" text-anchor="middle" fill="#ffffff" font-size="6.5">
+                    赤小豆薏米芡实奶茶
+                    </text>
+                </g>
+                <!-- 茉莉花胎菊奶茶 -->
+                <g onmouseover="showEffect('清热下火，去闭口', event)">
+                    <text class="tea-name" x="103" y="142" text-anchor="middle" fill="#ffffff" font-size="6.5">
+                    茉莉花胎菊奶茶
+                    </text>
+                </g>
+                <!-- 桂花枸杞莲子奶茶 -->
+                <g onmouseover="showEffect('清心安神，助眠', event)">
+                    <text class="tea-name" x="94" y="156" text-anchor="middle" fill="#4a312c " font-size="6.5">
+                    桂花枸杞莲子奶茶
+                    </text>
+                </g>
+                <!-- 玫瑰红枣枸杞奶茶 -->
+                <g onmouseover="showEffect('美颜润肤，调经活血', event)">
+                    <text class="tea-name" x="100" y="170" text-anchor="middle" fill="#4a312c " font-size="6.5">
+                    玫瑰红枣枸杞奶茶
+                    </text>
+                </g>
+                <!-- 添加提示文字 -->
+                <text id="hint-text" x="100" y="210">
+                    移动鼠标触碰奶茶名称即可查看对应功效
+                </text>
+                </svg>
+            </div>
+            <!-- 显示功效的元素 -->
+            <div class="effect-container"></div>
+            <div class="clear"></div>
+            <p> 在追求健康的道路上，人们不断尝试新奇的养生方式。近期，一种别开生面的中药奶茶引发了广泛关注。微博上<span class="highlight1">#在中医院喝到了中药奶茶#</span>话题下也展开了热烈的讨论，团队爬取了与该话题相关的帖子共562条，并对帖子呈现的情感态度进行了分析和归类。</p>
+
+
+            <!--微博评论情绪呈现-->
+            <div class="image-group" style="margin: auto;">
+                <div class="image-container">
+                <div class="flip-container">
+                    <div class="flipper">
+                    <div class="front">
+                        <img src="./image/part3-1.png" alt="Image 1">
+                    </div>
+                    <div class="back">
+                        <img src="./image/part3-2.png" alt="Image 2">
+                    </div>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="image-container">
+                <div class="flip-container">
+                    <div class="flipper">
+                    <div class="front">
+                        <img src="./image/part3-3.png" alt="Image 3">
+                    </div>
+                    <div class="back">
+                        <img src="./image/part3-4.png" alt="Image 4">
+                    </div>
+                    </div>
+                </div>
+                </div>
+            
+                <div class="image-container">
+                <div class="flip-container">
+                    <div class="flipper">
+                    <div class="front">
+                        <img src="./image/part3-5.png" alt="Image 5">
+                    </div>
+                    <div class="back">
+                        <img src="./image/part3-6.png" alt="Image 6">
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <p class="note1" style="margin-top: -1%;">移动鼠标查看情绪对应的代表性微博言论</p>
+            <p>中药奶茶成为养生潮流的引领者，在中医院品尝这一养生佳品，不仅是对中医传统的致敬，更是现代创新的生动体现。当今社会各行各业都在不断创新，而中药奶茶作为独具特色的创新之一，以健康为出发点，与养生理念紧密相联，很期待中药奶茶的创新能够为人们的养生之路注入更多活力。</p>
+
+            <div class="container">
+                <span class="first">年</span><span>轻</span><span>人</span><span>最</span><span>关</span><span>心</span><span>的</span><span>养</span><span>生</span><span>产</span><span>品</span><span>问</span><span>题</span>
+            </div>
+            <p style="margin-bottom:1%">市场上养生产品种类繁多，那年轻人最关心的产品问题是什么呢？调查结果显示，这一代年轻人对感兴趣的膳食养生概念主要为以下几类：</p>
+            <div class="main-text-care">首先是<span class="highlight1">富含膳食纤维</span>的产品，高达82%的调查对象表示对此非常感兴趣。这不仅彰显了年轻人对于促进消化、维持饱腹感、控制体重的健康需求，更突显了他们对全面养生的追求。</div>
+            <div class="main-text-care">在<span class="highlight1">维生素</span>领域，有79%的年轻人对此表示感兴趣，年轻人对于这些维持身体健康、增强免疫力的营养元素的关注不言而喻。</div>
+            <div class="main-text-care"><span class="highlight1">有机和绿色</span>产品同样备受青睐，77%的年轻人表达了对这类产品的浓厚兴趣，体现了他们对生态友好和健康有机食品的热爱。</div>
+            <div class="main-text-care"><span class="highlight1">益生菌</span>，作为关注度排名第四的元素，获得了74%年轻人的青睐。对于这种有益于肠道健康和免疫系统调节的产品，年轻人表现出明显的认同。</div>
+            <div class="main-text-care">此外，<span class="highlight1">无添加、低脂、减糖/0糖、无卡/低卡</span>等产品也在养生市场中占有一席之地，体现了年轻人对清淡、低热量饮食的偏好。</div>
+            <!-- 年轻人对饮食养生产品要素的感兴趣程度分布 -->
+            <div class="flourish-embed flourish-chart" data-src="visualisation/16365995" style="width: 40%;height: 40%;margin: auto;">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+            <p>年轻人充满活力的养生消费需求推动了养生经济的快速发展。从传统保健品到新颖的中药奶茶，市场呈现多元化趋势。未来，关注年轻人偏好的创新产品和服务将成为养生经济发展的关键。</p>
+
+
+        </div>
+
+        <!--养生潮流-->
+        <div id="pt4" style="margin-bottom:10px;">
+            <div style="height: 10px;"></div>
+            <div class="image" style="height: 230px;">
+                <h3 class="zwtitle animate__animated animate__fadeIn animate__once animatedElement" style="text-align:center; background-color: #d2c0ae82;">养生潮流：创意与社交化的养生新时代</h3>
+            </div>
+            <p>面对现实生活中难以解决的身心困扰，年轻人以实际行动加入养生大军，其广泛而新奇的养生实践也掀起了养生经济的热潮。而在年轻人养生这一现象背后，年轻一代主导塑造的养生观念与养生文化具有更为深刻的意义。</p>
+            <p>2017年，<span class="highlight1">“朋克养生”</span>一词引发年轻人群体的广泛共鸣，首次展现了这一群体独特的养生态度——突破束缚、强调个性。随着养生实践的不断深入，<span class="highlight1">“轻养生”</span>、<span class="highlight1">“新中式养生”</span>等结合年轻人生活实际和传统养生内核的养生观念相继发展，这一系列的观念演变呈现出<span class="highlight1">多元</span>、<span class="highlight1">全面</span>、<span class="highlight1">持续发展</span>的趋势，也表明年轻人不满足于传统的、固定的养生方式，而是更加注重个性发展、生活品质和多元选择。他们以开放的心态接纳各种可能性，打破了传统养生的局限，为养生观念注入了新的活力和内涵。这种多元化的养生观念不仅满足了个体需求，也推动着整个社会对健康和养生的认知发生积极的改变。</p>
+            <!--养生方式变化时间线-->
+            <div class="images-container">
+                <div class="container-box"></div> <!-- 添加矩形方框 -->
+                  <div class="image-group">
+                      <img src="./image/part4-1朋克左.png" alt="Image 1_1" style="height: 255.3px;width: 200.17px;">
+                      <img src="./image/part4-1朋克右.png" alt="Image 1_2" style="margin-top:15px;height: 237.91px;width: 393.68px;">
+                  </div>
+                  <div class="img-direction">
+                      <img src="./image/part4-箭头.png" style="height: 30px;margin-left: -124px;">
+                  </div>
+                  <div class="image-group">
+                      <img src="./image/part4-2佛系左.png" alt="Image 2_1" style="margin-top:15px;height: 237.91px;width: 393.68px;">
+                      <img src="./image/part4-2佛系右.png" alt="Image 2_2" style="height: 255.3px;width: 200.17px;">
+                  </div>
+                  <div class="img-direction">
+                    <img src="./image/part4-箭头.png" style="height: 30px;margin-left: 152px">
+                  </div>
+                  <div class="image-group">
+                      <img src="./image/part4-3轻养生左.png" alt="Image 3_1" style="height: 255.3px;width: 200.17px;">
+                      <img src="./image/part4-3轻养生右.png" alt="Image 3_2" style="margin-top:15px;height: 237.91px;width: 393.68px;">
+                  </div>
+                  <div class="img-direction">
+                    <img src="./image/part4-箭头.png" style="height: 30px;margin-left: -124px">
+                  </div>
+                  <div class="image-group">
+                      <img src="./image/part4-4新中式左.png" alt="Image 4_1" style="margin-top:15px;height: 237.91px;width: 393.68px;">
+                      <img src="./image/part4-4新中式右.png" alt="Image 4_2" style="height: 255.3px;width: 200.17px;">
+                  </div>
+                </div>
+            </div>
+            <p>不同于传统养生中专注个体的调养与修理，年轻人向养生实践积极注入<span class="highlight1">个性化</span>、<span class="highlight1">现代化</span>的元素与内容，开创了<span class="highlight1">社交性</span>、<span class="highlight1">互动式</span>的养生文化。他们以更强的意愿在社交媒体上分享自己的养生经验、生活方式如中药店买酸梅汤、种草养生好物等新奇尝试，形成了一个开放、互动的<span class="highlight1">养生社区</span>。这种共享文化不仅拉近了人与人之间的距离，也有效地鼓励了更多的青年人加入“养生大军”，形成一种社会共识，推动养生文化的传播和发展。</p>
+            <p>养生年轻化下的创新思维和多元养生实践为传统养生注入活力，这股年轻化潮流将号召更多人加入健康管理的行列，为养生产业带来更为繁荣和可持续的发展。</p>
+        </div>
+
+        <!--参考文献等-->
+        <div style="margin-bottom:10px;">
+            <div style="height: 30px;"></div>
+            <div class="image" style="height: 490px;">
+                <div style="background-color: #c4aa91b7; height: 490px;">
+                <div style="height: 30px;"></div>
+                <p class="note2">参考资料：</p>
+                <p class="note2">
+                    [1]丁香医生：《2023年国民健康洞察报告》<br>
+                    [2]清渠数据：《2023中国新消费趋势白皮书》<br>
+                    [3]中国睡眠研究会：《2022中国健康睡眠调查报告》<br>
+                    [4]美柚App：《2022中国女性经期健康报告》<br>
+                    [5]库润数据、达智数科：《Z世代养身保健趋势洞察报告》<br>
+                    [6]亿欧智库：《2022年轻人膳食养生报告》<br>
+                    [7]艾瑞咨询：《2022年代际人群养生观念差异观察》<br>
+                    [8]消费者报道：《当代人养生报告：“00后”的健康困扰最多，中式养生潮流崛起》<br>
+                </p>
+
+                <div style="height: 40px;"></div>
+                <p class="note2" style="text-align: center;">团队成员：游乐怡 李桂霞 林姿延 黄芷欣</p>
+                <p class="note2" style="text-align: center;">© 暨南大学 · 新闻与传播学院 · 网络与新媒体专业 · 铁头对抗秃头2.0</p>
+            </div>
+        </div>
+
+        </div>
+
+      </div>
+      <!-- script -->
+    <!-- 导航栏显示 -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        var navbar = document.getElementById("menu");
+        window.onscroll = function() {
+            var scrollHeight = window.pageYOffset || document.documentElement.scrollTop;
+            var threshold = 980; // 设置滚动高度的阈值，根据需要调整
+
+            if (scrollHeight > threshold) {
+                navbar.classList.remove("navbar-hidden");
+            } else {
+                navbar.classList.add("navbar-hidden");
+                }
+            };
+        });
+      </script>
+    <!-- 标题动画 -->
+        <script>
+            // 使用 getElementsByClassName 获取一组具有相同类名的元素
+            const animatedElements = document.getElementsByClassName('animatedElement');
+
+            // 将 NodeList 转换为数组，以便使用 forEach
+            const elementsArray = Array.from(animatedElements);
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    // 遍历数组中的每个元素
+                    elementsArray.forEach((element) => {
+                        if (entry.isIntersecting) {
+                            // 添加动画类
+                            element.classList.add('animate__fadeIn');
+                        } else {
+                            // 移除动画类
+                            element.classList.remove('animate__fadeIn');
+                        }
+                    });
+                });
+            });
+
+            // 遍历数组中的每个元素并观察它们
+            elementsArray.forEach((element) => {
+                observer.observe(element);
+            });
+        </script>
+    
+    <!-- 打字机动画 -->
+    <script>
+        // 获取引言文字元素
+        const introText1 = document.getElementById('introText1');
+
+        // 检测元素是否在视口中
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // 检测滚动事件
+        window.addEventListener('scroll', function () {
+            if (isElementInViewport(introText1)) {
+                // 隐藏光标
+                introText1.style.borderRight = 'none';
+                // 调用打字机效果函数
+                typeWriter(introText1);
+                // 移除滚动事件监听，确保效果只触发一次
+                window.removeEventListener('scroll', arguments.callee);
+            }
+        });
+
+        function typeWriter(element, callback) {
+            const text = element.innerHTML.trim(); // 使用 trim() 去除两端空白字符
+            element.innerHTML = '';
+            let i = 0;
+
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, 25);
+                } else {
+                    // 执行回调函数
+                    if (typeof callback === 'function') {
+                        callback();
+                    }
+                }
+            }
+
+            type();
+        }
+    </script>
+    <!-- 奶茶位置 -->
+    <script>
+        function showEffect(effect, event) {
+          const effectContainer = document.querySelector('.effect-container');
+          effectContainer.innerHTML = effect;
+      
+          const textElement = event.target.closest('g'); // 获取包含奶茶名字的<g>元素
+          const svgElement = textElement.closest('svg'); // 使用closest找到最近的SVG父元素
+      
+          const textRect = textElement.getBoundingClientRect(); // 获取奶茶名字相对于视口的坐标
+          const svgRect = svgElement.getBoundingClientRect(); // 获取 SVG 相对于视口的坐标
+      
+          const relativeTop = textRect.top - svgRect.top+ 2120; // 计算相对于SVG的垂直位置
+          const relativeLeft = textRect.right - svgRect.left + 328; // 5 是一个示例的间距值，根据需要调整
+      
+          effectContainer.style.top = relativeTop + 'px';
+          effectContainer.style.left = relativeLeft + 'px';
+      
+          effectContainer.style.display = 'block';
+        }
+      
+        function hideEffect() {
+          const effectContainer = document.querySelector('.effect-container');
+          effectContainer.style.display = 'none';
+        }
+    </script>
+    <!-- 小标题鼠标移入效果？ -->
+    <script>
+        // 写个脚本控制鼠标移入效果
+
+        // 找到所有span标签
+        let spans = document.querySelectorAll('span');
+
+        // 为所有的标签增加绑定鼠标移入、移除的事件，并处理相关增加或移除样式操作
+        for (const key in spans) {
+            if (spans.hasOwnProperty(key)) {
+                const element = spans[key];
+
+                // key为字符类型，需要转数字。
+                let index = parseInt(key);
+
+                // 增加鼠标移入事件
+                element.addEventListener("mouseover", (e) => {
+                    element.classList.add('flat');
+
+                    // 联动操作，控制前后span同时增加样式
+
+                    // 判断奇数、偶数（spans 是从0开始数的）
+                    if (index % 2 == 0) {
+                        // 偶数后一个联动
+                        spans[index + 1].classList.add('flat');
+                    } else {
+                        // 奇数前一个联动
+                        spans[index - 1].classList.add('flat');
+                    }
+                });
+                // 增加鼠标移出事件
+                element.addEventListener("mouseout", (e) => {
+                    element.classList.remove('flat');
+
+                    // 联动操作，控制前后span同时移除样式
+
+                    // 判断奇数、偶数（spans 是从0开始数的）
+                    if (index % 2 == 0) {
+                        // 偶数后一个联动
+                        spans[index + 1].classList.remove('flat');
+                    } else {
+                        // 奇数前一个联动
+                        spans[index - 1].classList.remove('flat');
+                    }
+                });
+            }
+        }
+    </script>
+    <!-- 观念变化 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var imageGroups = document.querySelectorAll('.image-group');
+
+            function isInViewport(element) {
+                var rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            function handleScroll() {
+                imageGroups.forEach(function (imageGroup) {
+                    if (isInViewport(imageGroup)) {
+                        imageGroup.classList.add('visible');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', handleScroll);
+
+            // Initial check in case some items are already in the viewport
+            handleScroll();
+        });
+    </script>
+
+
+    </body>
+    </html>
+    
+
