@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+p {
+    font-size: 18px;
+    width: calc(100% - 60px);
+    max-width: 700px;
+    margin: 30px auto;
+    text-align:justify;
+    line-height: 36px;
+    }
+
+    .note1{
+        font-size: 13px;
+        margin-left: 33%;
+        color:#4a312cac;
+    }
+
+    .note2{
+        font-size: 15px;
+        margin:0px auto;
+        text-align:left;
+        color:#ffffffc3
+    }
+
+    h2{
+    color: #000;
+    }
+
+    .highlight1{
+        font-weight:bold;
+        color:#ce5269;
+        font-size: 18px;
+    }
+    .highlight2{
+        font-weight:bolder;
+        color:#f0e9e3;
+        font-size: 46px;
+        text-align: center;
+        font-size:46px;
+        height:220px;
+        line-height: 220px;
+    }
+    
+    .highlight3 {
+        font-weight: bold;
+        color: #a32c40;
+        font-size: 20px;
+    }
+    
+    .highlight4{
+        font-weight:bold;
+        color:#a32c40
+    }
+
+    .bgtitle{
+        position:relative;
+        top:300px;
+        font-size: 65px;
+        color:#a32c40;
+        font-weight: bolder;
+        background-color: rgba(255, 255, 255, 0.7);
+        height:220px;
+    }
+    
+    @font-face{
+        font-family: 'TrueType_2';
+        src: url(./font/TrueType_2.ttf);
+        }
+
+    @font-face{
+        font-family: 'TrueType_1';
+        src: url(./font/TrueType_1.ttf);
+        }
+
+    .mtitle{
+        font-family:TrueType_2;
+        font-weight:bolder;
+        color:#a32c40;
+        font-size: 75px;
+        vertical-align: center; /* 设置垂直对齐为底部 */
+        display: inline-block; /* 需要与 vertical-align 配合使用 */
+        margin-left: 20px;
+        margin-top:30px;
+    }
+
+    .stitle{
+        font-family:TrueType_1;
+        font-weight:normal;
+        color:#a32c40;
+        font-size: 70px;
+        vertical-align:top; /* 设置垂直对齐为顶部 */
+        display: inline-block; /* 需要与 vertical-align 配合使用 */
+        margin-top: 0px;
+        margin-left: 390px;
+    }
+    
+    .zwtitle{
+        font-family:TrueType_2;
+        color: #a32c40;
+        font-size: 60px;
+        background-color: transparent;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        font-weight:bolder;
+        height:230px;
+        line-height: 230px;
+    }
